@@ -4,6 +4,7 @@ import { FaPlus } from "react-icons/fa6";
 import { IoIosArrowRoundUp, IoIosArrowRoundDown } from "react-icons/io";
 import { useEffect, useState } from "react";
 import { laws_data } from "./context/data";
+import { useNavigate } from "react-router-dom";
 
 const sampleTitles = [
   "Ban ads on government websites",
@@ -34,6 +35,7 @@ const sampleCategories = [
 export const App = () => {
   const [laws, setLaws] = useState(laws_data);
   const [modalOpen, setModalOpen] = useState(false);
+  const navigate = useNavigate();
   const [newLaw, setNewLaw] = useState({
     title: "",
     category: "",
@@ -131,7 +133,11 @@ export const App = () => {
 
       <div className="laws">
         {laws.map((law) => (
-          <div className="df fdc law" key={law.id}>
+          <div
+            className="df fdc cp law"
+            key={law.id}
+            onClick={() => navigate(`/law/${law.id}`)}
+          >
             <div className="info">
               <h3>{law.title}</h3>
               <span className="cat">{law.category}</span>
