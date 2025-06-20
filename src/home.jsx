@@ -86,9 +86,9 @@ export const App = () => {
         id: Date.now(),
         title: randomTitle,
         category: randomCategory,
-        upvotes: Math.floor(Math.random() * 100),
-        downvotes: Math.floor(Math.random() * 20),
-        comments: Math.floor(Math.random() * 20),
+        upvotes: Math.floor(Math.random() * 5) + 1, // 1–5
+        downvotes: Math.floor(Math.random() * 3), // 0–2
+        comments: Math.floor(Math.random() * 4) + 1, // 1–4
         createdAt: formatted,
       };
 
@@ -142,7 +142,6 @@ export const App = () => {
               <h3>{law.title}</h3>
               <span className="cat">{law.category}</span>
               <span className="com">{law.comments} comments</span>
-              <span className="date">posted: {law.createdAt}</span>
             </div>
             <div className="w100 df aic jcsb votes">
               <div className="df aic gap-5 up">

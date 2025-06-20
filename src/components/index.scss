@@ -128,3 +128,22 @@
   -webkit-user-select: none;
   user-select: none;
 }
+
+.votes {
+  .n {
+    color: #ff6565;
+  }
+
+  .y {
+    color: #1aff77;
+  }
+}
+
+.vote-result {
+  padding: 10px 15px;
+  margin: 10px 0 40px;
+  background: #1aff7710;
+  color: #1aff77;
+  font-weight: bold;
+  border-radius: 6px;
+}

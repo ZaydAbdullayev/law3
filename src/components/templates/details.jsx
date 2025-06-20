@@ -26,9 +26,12 @@ export const LawDetail = () => {
   const [comment, setComment] = useState("");
   const [comments, setComments] = useState(getRandomComents(law.comments));
   const navigate = useNavigate();
+  const [voted, setVoted] = useState(null); // 👈 Yeni state eklendi
 
   const handleVote = (type) => {
+    if (voted) return; // zaten oy verdiyse bir daha verme
     setVotes({ ...votes, [type]: votes[type] + 1 });
+    setVoted(type); // 👈 hangi tarafa oy verildiğini sakla
   };
 
   const handleAddComment = () => {
@@ -52,8 +55,9 @@ export const LawDetail = () => {
         </span>
         <h1 className="w100 df jcsb">
           {law.title}{" "}
-          <small className="fs-12">
-            <strong>Votes:</strong> {votes.yes} Yes / {votes.no} No
+          <small className="fs-12 votes">
+            <strong>Votes:</strong> <span className="y">{votes.yes} Yes</span> /{" "}
+            <span className="n">{votes.no} No</span>
           </small>
         </h1>
         <div className="category">{law.category}</div>
@@ -61,10 +65,18 @@ export const LawDetail = () => {
 
         <div className="df fdc gap-15">
           <small>Use the buttons below to vote on this proposal.</small>
-          <div className="vote-buttons">
-            <button onClick={() => handleVote("yes")}>YES</button>
-            <button onClick={() => handleVote("no")}>NO</button>
-          </div>
+
+          {voted ? (
+            <div className="vote-result">
+              ✅ You voted <strong>{voted.toUpperCase()}</strong> on this
+              proposal.
+            </div>
+          ) : (
+            <div className="vote-buttons">
+              <button onClick={() => handleVote("yes")}>YES</button>
+              <button onClick={() => handleVote("no")}>NO</button>
+            </div>
+          )}
         </div>
 
         <div className="df fdc gap-10">
@@ -92,9 +104,6 @@ export const LawDetail = () => {
               </div>
             </div>
           ))}
-          <div className="w100 df aic jcc cp">
-            <u>See more</u>
-          </div>
         </div>
       </div>
     </div>
