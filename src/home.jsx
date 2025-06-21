@@ -115,7 +115,10 @@ export const App = () => {
     <div className="df fdc parliament">
       <div className="w100 df jcsb main-header">
         <p className="fs-28">THE PEOPLE'S PARLIAMENT</p>
-        <u className="df aic gap-10 fs-18 cp">
+        <u
+          className="df aic gap-10 fs-18 cp"
+          onClick={() => window.open("https://x.com/peoplemakelaw", "_blank")}
+        >
           Follow Us <RiTwitterXFill className="fs-22" />
         </u>
       </div>

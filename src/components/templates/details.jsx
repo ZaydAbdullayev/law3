@@ -22,7 +22,7 @@ const getRandomComents = (commentCount) => {
 export const LawDetail = () => {
   const { id } = useParams();
   const law = laws_data.find((law) => law.id === parseInt(id));
-  const [votes, setVotes] = useState({ yes: law.upvotes, no: law.downvotes });
+  const [votes, setVotes] = useState({ yes: law?.upvotes, no: law?.downvotes });
   const [comment, setComment] = useState("");
   const [comments, setComments] = useState(getRandomComents(law.comments));
   const navigate = useNavigate();
