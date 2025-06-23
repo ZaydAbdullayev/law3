@@ -114,7 +114,7 @@ export const App = () => {
   return (
     <div className="df fdc parliament">
       <div className="w100 df jcsb main-header">
-        <p className="fs-28">THE PEOPLE'S PARLIAMENT</p>
+        <p className="fs-28">THE PEOPLE MAKE LAW</p>
         <u
           className="df aic gap-10 fs-18 cp"
           onClick={() => window.open("https://x.com/peoplemakelaw", "_blank")}
@@ -169,7 +169,7 @@ export const App = () => {
       </div>
 
       <div className="w100 df fdc aic jcc gap-10 footer">
-        <p>2025 © The People's Parliament. All rights reserved.</p>
+        <p>2025 © The PEOPLE MAKE LAW. All rights reserved.</p>
         <small>about | contact | privacy policy | terms of service</small>
       </div>
 
