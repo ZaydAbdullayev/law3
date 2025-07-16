@@ -114,10 +114,10 @@ export const App = () => {
   return (
     <div className="df fdc parliament">
       <div className="w100 df jcsb main-header">
-        <p className="fs-28">THE PEOPLE MAKE LAW</p>
+        <p className="fs-28">Law of the Crowd</p>
         <u
           className="df aic gap-10 fs-18 cp"
-          onClick={() => window.open("https://x.com/peoplemakelaw", "_blank")}
+          onClick={() => window.open("https://x.com/lawofcrowd", "_blank")}
         >
           Follow Us <RiTwitterXFill className="fs-22" />
         </u>
